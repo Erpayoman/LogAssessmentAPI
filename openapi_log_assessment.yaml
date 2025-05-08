@@ -1,0 +1,57 @@
+openapi: 3.0.1
+info:
+  title: Log Assessment Function
+  version: 1.0.0
+  description: Logs assessment results for GPT users via Azure Function.
+servers:
+  - url: https://pocendavalearningptfnc.azurewebsites.net
+paths:
+  /api/log-assessment:
+    post:
+      summary: Log a user assessment
+      operationId: logUserAssessment
+      security:
+        - api_key: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                UserId:
+                  type: string
+                  description: Unique user ID of the GPT user
+                AssessmentResult:
+                  type: object
+                  properties:
+                    Score:
+                      type: integer
+                      description: Numeric score of the assessment
+                    Feedback:
+                      type: string
+                      description: Qualitative feedback
+                    CompletedAt:
+                      type: string
+                      format: date-time
+                      description: ISO 8601 timestamp of completion
+                  required:
+                    - Score
+                    - Feedback
+                    - CompletedAt
+              required:
+                - UserId
+                - AssessmentResult
+      responses:
+        '200':
+          description: Assessment saved
+        '400':
+          description: Missing required fields
+        '401':
+          description: Invalid API key
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
