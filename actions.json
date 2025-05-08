@@ -12,7 +12,7 @@
         "url": "https://pocendavalearningptfnc.azurewebsites.net/api/log-assessment",
         "method": "POST",
         "headers": {
-          "x-api-key": "{{API_KEY}}",
+          "code": "{{API_KEY}}",
           "Content-Type": "application/json"
         },
         "requestBody": {
