@@ -32,8 +32,8 @@ components:
   securitySchemes:
     api_key:
       type: apiKey
-      name: code
-      in: query
+      name: x-api-key
+      in: header
   schemas:
     LogAssessmentRequest:
       type: object
