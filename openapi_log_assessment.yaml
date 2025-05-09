@@ -32,7 +32,7 @@ components:
   securitySchemes:
     api_key:
       type: apiKey
-      name: x-api-key
+      name: code
       in: header
   schemas:
     LogAssessmentRequest:
