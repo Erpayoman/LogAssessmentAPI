@@ -33,7 +33,7 @@ components:
     api_key:
       type: apiKey
       name: code
-      in: header
+      in: query
   schemas:
     LogAssessmentRequest:
       type: object
