@@ -62,7 +62,7 @@ components:
             AttributeValues:
               type: array
               items:
-                type: string
+                type: float
               description: List of attribute values
             Score:
               type: integer
