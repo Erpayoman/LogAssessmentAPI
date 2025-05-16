@@ -65,12 +65,12 @@ components:
                 type: number
                 format: float
               description: List of attribute values
-            Score:
-              type: integer
-              description: Numeric score of the assessment
-            Feedback:
-              type: string
-              description: Qualitative feedback
+            #Score:
+            #  type: integer
+            #  description: Numeric score of the assessment
+            #Feedback:
+            #  type: string
+            #  description: Qualitative feedback
             CompletedAt:
               type: string
               format: date-time
